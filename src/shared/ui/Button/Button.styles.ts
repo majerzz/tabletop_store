@@ -1,7 +1,6 @@
 import { css } from '@emotion/css'
 import { EnumSize } from 'shared/ui/Button/Button.types'
 
-// TODO дописать))
 const calculateSize = (size: EnumSize): string => {
   switch (size) {
     case EnumSize.SM:
@@ -18,13 +17,12 @@ const calculateSize = (size: EnumSize): string => {
 export const styles = {
   button: (size: EnumSize) => css`
     display: inline-block;
-    /* box-sizing: border-box; */
-    /* align-items: center;
-    justify-content: space-around; */
     padding: ${calculateSize(size)};
     color: black;
     border-radius: 6px;
     background-color: white;
+    border: none;
+    user-select: none;
     font-size: ${calculateSize(size)};
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
     &:hover {

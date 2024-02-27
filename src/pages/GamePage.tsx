@@ -1,5 +1,5 @@
 import { GameList } from 'entities/Game/GameList'
-import { GamePageCard } from 'features/GamePageCard/GamePageCard'
+import { GamePageCard } from 'widgets/GamePageCard/GamePageCard'
 import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 
