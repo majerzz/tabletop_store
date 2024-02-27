@@ -1,16 +1,17 @@
 import type { AppDispatch } from 'app/model/store'
 import { shoppingCartActions } from 'app/model/store/shoppingCartSlice'
 import type { TGame } from 'entities/Game/Game.type'
-import { styles } from 'features/GamePageCard/GamePageCard.styles'
+import { styles } from 'widgets/GamePageCard/GamePageCard.styles'
 import { useDispatch } from 'react-redux'
-import { Button } from 'shared/ui/Button'
 import React from 'react'
-import { EnumSize } from 'shared/ui/Button/Button.types'
 import { EnumTitleSize, TitleAndContent } from 'shared/ui/TitleAndContent'
+import { Button } from 'shared/ui/Button'
+import { EnumSize } from 'shared/ui/Button/Button.types'
 
 type Props = {
   game: TGame
 }
+
 export const GamePageCard: React.FC<Props> = ({ game }) => {
   const dispatch = useDispatch<AppDispatch>()
 

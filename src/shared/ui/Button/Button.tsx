@@ -10,8 +10,8 @@ type Props = {
 
 export const Button: React.FC<Props> = ({ text, onClick, size = EnumSize.MD }) => {
   return (
-    <div className={styles.button(size)} onClick={onClick}>
+    <button className={styles.button(size)} onClick={onClick}>
       {text}
-    </div>
+    </button>
   )
 }
