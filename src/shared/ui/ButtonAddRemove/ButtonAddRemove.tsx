@@ -10,7 +10,7 @@ export const ButtonAddRemove: React.FC<Props> = ({ onClickMinus, onClickPlus }) 
   return (
     <div className={styles.buttonAddRemove}>
       <span className={styles.buttonAddRemoveElement} onClick={onClickMinus}>-</span>
-      <span>|</span>
+      <span>ammount</span>
       <span className={styles.buttonAddRemoveElement} onClick={onClickPlus}>+</span>
     </div>
   )
