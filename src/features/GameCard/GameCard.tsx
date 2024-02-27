@@ -1,7 +1,9 @@
 import React from 'react'
 import { styles } from 'features/GameCard/GameCard.styles'
 import { Link } from 'react-router-dom'
-import { EnumTitleSize, TitleAndContent } from 'shared/ui/TitleAndContent'
+import { Title } from 'shared/ui/Title'
+import { TextContent } from 'shared/ui/TextContent'
+import { EnumTitleSize } from 'shared/ui/Title/Title.types'
 
 type Props = {
   gameName: string
@@ -14,7 +16,10 @@ export const GameCard: React.FC<Props> = ({ gameName, gameImages, gamePrice, gam
   return (
     <div className={styles.gameCard}>
       <img className={styles.img} src={gameImages[0]} alt="img" />
-      <Link to={`/game/${gameId}`}><TitleAndContent title={gameName} content={`${gamePrice} Р`} size={EnumTitleSize.gamePage}/></Link>
+      <Link to={`/game/${gameId}`}>
+        <Title title={gameName} size={EnumTitleSize.MD}/>
+        <TextContent>{gamePrice} &#8381;</TextContent>
+      </Link>
     </div>
   )
 }
