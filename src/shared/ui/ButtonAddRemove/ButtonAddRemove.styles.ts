@@ -8,6 +8,7 @@ export const styles = {
     color: black;
     border-radius: 6px;
     width: fit-content;
+    height: fit-content;
     background-color: white;
     border: none;
     user-select: none;
