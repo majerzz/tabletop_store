@@ -7,21 +7,21 @@ import { GameList } from 'entities/Game/GameList'
 import { Link } from 'react-router-dom'
 
 export const ShoppingCart: React.FC = () => {
-  const idList = useSelector((state: RootState) => state.shoppingCart.idList)
+  const cartList = useSelector((state: RootState) => state.shoppingCart.gameList)
 
-  console.log(idList)
+  console.log(cartList)
 
   const finalSumm = useMemo(() => {
-    return idList.reduce((currentSum, currentId) => {
-      return (currentSum + ((GameList.find(game => game.id === currentId)?.price) ?? 0))
+    return cartList.reduce((currentSum, currentId) => {
+      return (currentSum + ((GameList.find(game => game.id === currentId.id)?.price) ?? 0))
     }, 0)
-  }, [idList])
+  }, [cartList])
 
   return (
     <Link to="/cart" className={styles.shoppingCartBlock}>
       {finalSumm} Р
       <img className={styles.cartImg} src={cartImg} alt="cart" />
-      {idList.length}
+      {cartList.length}
     </Link>
   )
 }

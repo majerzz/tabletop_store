@@ -18,7 +18,9 @@ export const GamePageCard: React.FC<Props> = ({ game }) => {
   const dispatch = useDispatch<AppDispatch>()
 
   const buyHandler = (): void => {
-    dispatch(shoppingCartActions.addGame(game.id))
+    const ammount = 1
+    const id = game.id
+    dispatch(shoppingCartActions.addGame({ id, ammount }))
   }
 
   return (
