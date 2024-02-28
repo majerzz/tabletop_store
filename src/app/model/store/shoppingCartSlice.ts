@@ -1,12 +1,13 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type TGame } from 'entities/Game/Game.type'
+import { type GameInCart } from 'entities/GameInCart/GameInCart.types'
 
 type TInitialState = {
-  idList: number[]
+  gameList: GameInCart[]
 }
 
 const initialState: TInitialState = {
-  idList: []
+  gameList: []
 }
 
 const shoppingCartSlice = createSlice({
@@ -14,14 +15,21 @@ const shoppingCartSlice = createSlice({
   initialState,
   reducers: {
 
-    addGame (state, { payload }: PayloadAction<TGame['id']>) {
-      if (!state.idList.includes(payload)) {
-        state.idList.push(payload)
+    addGame (state, { payload }: PayloadAction<GameInCart>) {
+      const foundGameIndex = state.gameList.findIndex(game => game.id === payload.id)
+
+      if (foundGameIndex !== -1) {
+        // Игра уже есть в корзине, обновляем количество
+        state.gameList[foundGameIndex].ammount += payload.ammount
+      } else {
+        // Игры нет в корзине, добавляем новую
+        state.gameList.push(payload)
+        console.log(state.gameList)
       }
     },
 
     removeGame (state, { payload }: PayloadAction<TGame['id']>) {
-      state.idList = state.idList.filter(id => id !== payload)
+      // state.gameList = state.gameList.filter(id => id !== payload)
     }
   }
 })

@@ -4,7 +4,7 @@ export const styles = {
   gameCards: css`
     display: flex;
     flex-wrap: wrap;
-    gap: 3vw;
+    gap: 1vw;
     justify-content: center;
     float: none;
     padding: 0 1vw;

@@ -13,12 +13,14 @@ type Props = {
   title: string
   price: number
   id: number
+  ammount: number
 }
 
-export const CartGameCard: React.FC<Props> = ({ image, title, price, id }) => {
+export const CartGameCard: React.FC<Props> = ({ image, title, price, id, ammount }) => {
   const dispatch = useDispatch<AppDispatch>()
   const onClickPlus = (): void => {
-    dispatch(shoppingCartActions.addGame(id))
+    const ammount = 1
+    dispatch(shoppingCartActions.addGame({ id, ammount }))
   }
 
   const onClickMinus = (): void => {
@@ -27,12 +29,14 @@ export const CartGameCard: React.FC<Props> = ({ image, title, price, id }) => {
 
   return (
     <div className={styles.cartGameCard}>
-      <img className={styles.cartGameImage} src={image} alt="gameImage" />
-      <div>
-        <Title title={title} size={EnumTitleSize.MD}/>
-        <TextContent>{price} &#8381;</TextContent>
+      <div className={styles.cartGameLeft}>
+        <img className={styles.cartGameImage} src={image} alt="gameImage" />
+        <div>
+          <Title title={title} size={EnumTitleSize.MD} />
+          <TextContent>{price} &#8381;</TextContent>
+        </div>
       </div>
-      <ButtonAddRemove onClickPlus={onClickPlus} onClickMinus={onClickMinus}/>
+      <ButtonAddRemove onClickPlus={onClickPlus} onClickMinus={onClickMinus} ammount={ammount}/>
     </div>
   )
 }
