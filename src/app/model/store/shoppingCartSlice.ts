@@ -1,5 +1,4 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { type TGame } from 'entities/Game/Game.type'
 import { type GameInCart } from 'entities/GameInCart/GameInCart.types'
 
 type TInitialState = {
@@ -28,8 +27,14 @@ const shoppingCartSlice = createSlice({
       }
     },
 
-    removeGame (state, { payload }: PayloadAction<TGame['id']>) {
-      // state.gameList = state.gameList.filter(id => id !== payload)
+    removeGame (state, { payload }: PayloadAction<GameInCart>) {
+      const foundGameIndex = state.gameList.findIndex(game => game.id === payload.id)
+
+      if (state.gameList[foundGameIndex].ammount > payload.ammount) {
+        state.gameList[foundGameIndex].ammount -= payload.ammount
+      } else {
+        state.gameList.splice(foundGameIndex, 1)
+      }
     }
   }
 })

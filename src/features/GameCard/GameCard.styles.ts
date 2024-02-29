@@ -22,6 +22,7 @@ export const styles = {
   img: css`
     border-radius: 1%;
     height: 25vh;
-    width: auto;
+    width: 12vw;
+    object-fit: cover;
   `
 }
