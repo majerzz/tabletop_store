@@ -1,7 +1,7 @@
 import type { AppDispatch } from 'app/model/store'
 import { shoppingCartActions } from 'app/model/store/shoppingCartSlice'
 import type { TGame } from 'entities/Game/Game.type'
-import { styles } from 'widgets/GamePageCard/GamePageCard.styles'
+import { styles } from 'features/GamePageCard/GamePageCard.styles'
 import { useDispatch } from 'react-redux'
 import React from 'react'
 import { Title } from 'shared/ui/Title'

@@ -16,15 +16,17 @@ type Props = {
   ammount: number
 }
 
-export const CartGameCard: React.FC<Props> = ({ image, title, price, id, ammount }) => {
+export const CartGameCard: React.FC<Props> = React.memo(({ image, title, price, id, ammount }) => {
   const dispatch = useDispatch<AppDispatch>()
+
   const onClickPlus = (): void => {
     const ammount = 1
     dispatch(shoppingCartActions.addGame({ id, ammount }))
   }
 
   const onClickMinus = (): void => {
-    dispatch(shoppingCartActions.removeGame(id))
+    const ammount = 1
+    dispatch(shoppingCartActions.removeGame({ id, ammount }))
   }
 
   return (
@@ -39,4 +41,6 @@ export const CartGameCard: React.FC<Props> = ({ image, title, price, id, ammount
       <ButtonAddRemove onClickPlus={onClickPlus} onClickMinus={onClickMinus} ammount={ammount}/>
     </div>
   )
-}
+})
+
+CartGameCard.displayName = 'CartGameCard'
