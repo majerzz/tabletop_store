@@ -4,12 +4,17 @@ import { type RootState } from 'app/model/store'
 import { CartGameCard } from 'features/CartGameCard'
 import { styles } from 'widgets/CartGameList/CartGameList.styles'
 import { GameList } from 'entities/Game/GameList'
+import { TextContent } from 'shared/ui/TextContent'
 
 export const CartGameList: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.shoppingCart.gameList)
+  console.log(cartItems.length)
 
   return (
-    <div className={styles.cartGameList}>
+    cartItems.length === 0 ? (
+      <TextContent>Корзина пуста!</TextContent>
+    ) : (
+      <div className={styles.cartGameList}>
       {cartItems.map((cartItem, index) => {
         const game = GameList.find(game => game.id === cartItem.id)
         const ammount = cartItem.ammount
@@ -19,11 +24,12 @@ export const CartGameList: React.FC = () => {
             {game ? (
               <CartGameCard title={game.title} price={game.price} image={game.images[0]} id={game.id} ammount={ammount} />
             ) : (
-              <span>Такой игры нет!</span>
+              <TextContent>Такой игры нет!</TextContent>
             )}
           </React.Fragment>
         )
       })}
     </div>
+    )
   )
 }

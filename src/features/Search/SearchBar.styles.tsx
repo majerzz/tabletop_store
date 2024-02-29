@@ -2,7 +2,8 @@ import { css } from '@emotion/css'
 
 export const styles = {
   search: css`
-    height: 30px;
-    min-width: 16vw;
+    border-radius: 8px;
+    height: 40px;
+    min-width: 25vw;
   `
 }

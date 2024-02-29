@@ -14,12 +14,12 @@ type Props = {
 
 export const GameCard: React.FC<Props> = ({ gameName, gameImages, gamePrice, gameId }) => {
   return (
-    <div className={styles.gameCard}>
-      <img className={styles.img} src={gameImages[0]} alt="img" />
-      <Link to={`/game/${gameId}`}>
-        <Title title={gameName} size={EnumTitleSize.MD}/>
+      <Link className={styles.gameCard} to={`/game/${gameId}`}>
+        <img className={styles.img} src={gameImages[0]} alt="img" />
+        <div>
+          <Title title={gameName} size={EnumTitleSize.MD}/>
         <TextContent>{gamePrice} &#8381;</TextContent>
+        </div>
       </Link>
-    </div>
   )
 }

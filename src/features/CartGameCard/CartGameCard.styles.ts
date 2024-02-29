@@ -6,7 +6,7 @@ export const styles = {
     flex-wrap: wrap;
     border-radius: 5px;
     background-color: rgba(0,0,0,0.1);
-    width: 100%;
+    width: 55vw;
     padding: 1vh;
     align-items: center;
     justify-content: space-between;
@@ -14,9 +14,9 @@ export const styles = {
   `,
   cartGameImage: css`
     border-radius: 1%;
+    object-fit: cover;
     height: 10vh;
-    width: 10vw;
-    width: auto;
+    width: 10vh;
   `,
   cartGameLeft: css`
     display: flex;

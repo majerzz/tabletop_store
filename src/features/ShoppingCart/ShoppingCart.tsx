@@ -13,15 +13,21 @@ export const ShoppingCart: React.FC = () => {
 
   const finalSumm = useMemo(() => {
     return cartList.reduce((currentSum, currentId) => {
-      return (currentSum + ((GameList.find(game => game.id === currentId.id)?.price) ?? 0))
+      return (currentSum + ((GameList.find(game => game.id === currentId.id)?.price) ?? 0) * currentId.ammount)
+    }, 0)
+  }, [cartList])
+
+  const totalItems = useMemo(() => {
+    return cartList.reduce((currentAmmount, currentId) => {
+      return ((currentAmmount + currentId.ammount) ?? 0)
     }, 0)
   }, [cartList])
 
   return (
     <Link to="/cart" className={styles.shoppingCartBlock}>
-      {finalSumm} Р
+      {finalSumm} &#8381;
       <img className={styles.cartImg} src={cartImg} alt="cart" />
-      {cartList.length}
+      {totalItems}
     </Link>
   )
 }

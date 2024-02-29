@@ -8,7 +8,7 @@ export const styles = {
     gap: 1rem;
     background-color: white;
     padding: 1rem;
-    border-radius: 5%;
+    border-radius: 10px;
     color: black;
   `,
   cartImg: css`

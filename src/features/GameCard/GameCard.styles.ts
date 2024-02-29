@@ -5,7 +5,7 @@ export const styles = {
     background-color: rgba(0,0,0,0.1);
     border-radius: 5%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 2vh;
     float: none;
@@ -22,7 +22,7 @@ export const styles = {
   img: css`
     border-radius: 1%;
     height: 25vh;
-    width: 12vw;
+    width: 25vh;
     object-fit: cover;
   `
 }
