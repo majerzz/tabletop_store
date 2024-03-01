@@ -1,6 +1,6 @@
 import type { AppDispatch } from 'app/model/store'
 import { shoppingCartActions } from 'app/model/store/shoppingCartSlice'
-import type { TGame } from 'entities/Game/Game.type'
+import type { TResponseProduct } from 'app/api/Game.types'
 import { styles } from 'features/GamePageCard/GamePageCard.styles'
 import { useDispatch } from 'react-redux'
 import React from 'react'
@@ -11,7 +11,7 @@ import { TextContent } from 'shared/ui/TextContent'
 import { EnumTitleSize } from 'shared/ui/Title/Title.types'
 
 type Props = {
-  game: TGame
+  game: TResponseProduct
 }
 
 export const GamePageCard: React.FC<Props> = ({ game }) => {

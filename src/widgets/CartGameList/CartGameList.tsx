@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 import { type RootState } from 'app/model/store'
 import { CartGameCard } from 'features/CartGameCard'
 import { styles } from 'widgets/CartGameList/CartGameList.styles'
-import { GameList } from 'entities/Game/GameList'
 import { TextContent } from 'shared/ui/TextContent'
+import { productsApi } from 'app/api/products'
 
 export const CartGameList: React.FC = () => {
   const cartItems = useSelector((state: RootState) => state.shoppingCart.gameList)
+  const { data: gameList } = productsApi.useGetProductsQuery(undefined)
   console.log(cartItems.length)
 
   return (
@@ -16,7 +17,7 @@ export const CartGameList: React.FC = () => {
     ) : (
       <div className={styles.cartGameList}>
       {cartItems.map((cartItem, index) => {
-        const game = GameList.find(game => game.id === cartItem.id)
+        const game = gameList?.find(game => game.id === cartItem.id)
         const ammount = cartItem.ammount
 
         return (

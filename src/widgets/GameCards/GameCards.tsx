@@ -1,17 +1,19 @@
 import React from 'react'
 import { styles } from 'widgets/GameCards/GameCards.styles'
 import { GameCard } from 'features/GameCard/GameCard'
-import { GameList } from 'entities/Game/GameList'
+import { productsApi } from 'app/api/products'
 
 type Props = {
   idList: number[]
 }
 
 export const GameCards: React.FC<Props> = ({ idList }) => {
+  const { data: gameList } = productsApi.useGetProductsQuery(undefined)
+
   return (
     <div className={styles.gameCards}>
       {idList.map((id, index) => {
-        const game = GameList.find(game => game.id === id)
+        const game = gameList?.find(game => game.id === id)
 
         return (
           <React.Fragment key={game?.id ?? index}>
@@ -23,7 +25,7 @@ export const GameCards: React.FC<Props> = ({ idList }) => {
                 gameId={game.id}
               />
             ) : (
-              <span>игры нет</span>
+              <span>Игры нет</span>
             )}
           </React.Fragment>
         )

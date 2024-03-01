@@ -1,4 +1,4 @@
-export type TGame = {
+export type TResponseProduct = {
   id: number
   title: string
   description: string
