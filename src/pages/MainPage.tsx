@@ -1,5 +1,5 @@
 import React from 'react'
-import { GameCards } from 'widgets/GameCards/GameCards'
+import { GameCards } from 'widgets/GameCards'
 
 const TestPage: React.FC = () => {
   return (

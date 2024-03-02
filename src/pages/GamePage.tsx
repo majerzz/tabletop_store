@@ -1,5 +1,5 @@
 import { productsApi } from 'app/api/products'
-import { GamePageCard } from 'features/GamePageCard/GamePageCard'
+import { GamePageCard } from 'features/GamePageCard'
 import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 

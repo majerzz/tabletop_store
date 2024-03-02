@@ -1,6 +1,6 @@
 import React from 'react'
 import { styles } from 'widgets/GameCards/GameCards.styles'
-import { GameCard } from 'features/GameCard/GameCard'
+import { GameCard } from 'features/GameCard'
 import { productsApi } from 'app/api/products'
 
 type Props = {
