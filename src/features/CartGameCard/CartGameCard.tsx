@@ -33,7 +33,7 @@ export const CartGameCard: React.FC<Props> = React.memo(({ image, title, price, 
     <div className={styles.cartGameCard}>
       <div className={styles.cartGameLeft}>
         <img className={styles.cartGameImage} src={image} alt="gameImage" />
-        <div>
+        <div className={styles.cartGameText}>
           <Title title={title} size={EnumTitleSize.MD} />
           <TextContent>{price} &#8381;</TextContent>
         </div>

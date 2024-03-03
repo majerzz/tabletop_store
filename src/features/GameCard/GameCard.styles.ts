@@ -10,7 +10,6 @@ export const styles = {
     gap: 2vh;
     float: none;
     padding: 20px 20px;
-    width: fit-content;
     max-height: 50vh;
     font-weight: bold;
     color: #FFF;
@@ -24,5 +23,11 @@ export const styles = {
     height: 25vh;
     width: 25vh;
     object-fit: cover;
+  `,
+  textContent: css`
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 25vh;
   `
 }
