@@ -7,7 +7,7 @@ export const styles = {
     align-items: flex-start;
     width: fit-content;
     margin: 0 auto;
-    gap: 2vh;
-    padding: 0 20vw;
+    gap: 16px;
+    padding: 0 20px;
   `
 }

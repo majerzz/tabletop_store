@@ -12,6 +12,8 @@ const calculateSize = (size: EnumTitleSize): string => {
 
 export const styles = {
   title: (size: EnumTitleSize) => css`
+    text-overflow: ellipsis;
+    overflow: hidden;
     font-size: ${calculateSize(size)};
     color: #fff;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);

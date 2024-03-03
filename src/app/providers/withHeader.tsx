@@ -1,4 +1,5 @@
 /* eslint-disable react/display-name */
+import { styles } from 'app/providers/page.styles'
 import React from 'react'
 import { Header } from 'widgets/Header'
 
@@ -8,7 +9,9 @@ const withHeader = (Page: React.FC) => {
     return (
       <>
         <Header />
-        <Page {...props} />
+        <div className={styles.page}>
+          <Page {...props} />
+        </div>
       </>
     )
   }
