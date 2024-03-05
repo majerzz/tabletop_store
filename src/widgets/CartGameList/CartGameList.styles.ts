@@ -8,7 +8,7 @@ export const styles = {
     gap: 8px;
     float: none;
     box-sizing: border-box;
-    width: fit-content;
+    max-width: 100%;
   `,
   cartGameItem: css`
     border: 1px solid black;

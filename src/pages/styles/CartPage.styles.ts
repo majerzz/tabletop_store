@@ -4,10 +4,9 @@ export const styles = {
   cartPage: css`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
+    align-items: center;
+    max-width: 100%;
     margin: 0 auto;
     gap: 16px;
-    padding: 0 20px;
   `
 }

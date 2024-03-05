@@ -6,13 +6,13 @@ type Props = {
   onClickPlus: MouseEventHandler
   ammount: number
 }
-// тут завести пропсы value и setValue
+// TODO тут завести пропсы value и setValue
 export const ButtonAddRemove: React.FC<Props> = ({ onClickMinus, onClickPlus, ammount }) => {
   return (
     <div className={styles.buttonAddRemove}>
-      <span className={styles.buttonAddRemoveElement} onClick={onClickMinus}>-</span>
+      <button className={styles.buttonAddRemoveElement} onClick={onClickMinus}>-</button>
       <span>{ammount}</span>
-      <span className={styles.buttonAddRemoveElement} onClick={onClickPlus}>+</span>
+      <button className={styles.buttonAddRemoveElement} onClick={onClickPlus}>+</button>
     </div>
   )
 }

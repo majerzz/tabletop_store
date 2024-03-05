@@ -17,6 +17,11 @@ export const styles = {
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
   `,
   buttonAddRemoveElement: css`
+  padding: 3px 3px;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
     cursor: pointer;
     &:hover {
       scale: 1.2;
