@@ -4,6 +4,7 @@ export const styles = {
   gamePageCard: css`
     display: flex;
     flex-direction: row;
+    justify-content:center;
     flex-wrap: wrap;
     max-width: 100%;
     gap: 40px;
@@ -14,6 +15,7 @@ export const styles = {
     border-radius: 10px;
   `,
   gamePageCardImg: css`
+    align-self: center;
     width: 400px;
     max-width: 100%;
   `,
