@@ -9,6 +9,7 @@ import { Button } from 'shared/ui/Button'
 import { EnumSize } from 'shared/ui/Button/Button.types'
 import { TextContent } from 'shared/ui/TextContent'
 import { EnumTitleSize } from 'shared/ui/Title/Title.types'
+import { ImageSlider } from 'entities/ImageSlider'
 
 type Props = {
   game: TResponseProduct
@@ -25,7 +26,7 @@ export const GamePageCard: React.FC<Props> = ({ game }) => {
 
   return (
     <div className={styles.gamePageCard}>
-      <img className={styles.gamePageCardImg} src={game.images[0]} alt="" />
+      <ImageSlider images={game.images}/>
       <div className={styles.gamePageCardText}>
         <Title title={game.title} size={EnumTitleSize.LG}/>
         <TextContent>{game.description}</TextContent>
