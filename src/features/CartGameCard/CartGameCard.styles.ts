@@ -18,8 +18,8 @@ export const styles = {
   cartGameImage: css`
     border-radius: 1%;
     object-fit: cover;
-    height: 10vh;
-    width: 10vh;
+    width: 80px;
+    height: 80px;
   `,
   cartGameLeft: css`
     display: flex;
@@ -27,8 +27,11 @@ export const styles = {
   `,
   cartGameText: css`
     overflow: hidden;
-    width: 100px;
+    max-width: 350px;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: break-spaces;
+  `,
+  cartGameButton: css`
+    justify-self: flex-start;
   `
 }

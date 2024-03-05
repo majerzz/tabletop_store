@@ -38,7 +38,9 @@ export const CartGameCard: React.FC<Props> = React.memo(({ image, title, price, 
           <TextContent>{price} &#8381;</TextContent>
         </div>
       </div>
-      <ButtonAddRemove onClickPlus={onClickPlus} onClickMinus={onClickMinus} ammount={ammount}/>
+      <span className={styles.cartGameButton}>
+        <ButtonAddRemove onClickPlus={onClickPlus} onClickMinus={onClickMinus} ammount={ammount}/>
+      </span>
     </div>
   )
 })

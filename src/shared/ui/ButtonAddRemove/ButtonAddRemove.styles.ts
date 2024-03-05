@@ -4,6 +4,7 @@ export const styles = {
   buttonAddRemove: css`
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.2rem;
     color: black;
     border-radius: 6px;
@@ -15,6 +16,10 @@ export const styles = {
     user-select: none;
     font-size: 1.2rem;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    @media (max-width: 380px) {
+      min-width: 50px; 
+      font-size: 1rem;
+    }
   `,
   buttonAddRemoveElement: css`
   padding: 3px 3px;
